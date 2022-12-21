@@ -1,3 +1,4 @@
+
 \RequirePackage{plautopatch}  % pLaTeX または upLaTeX のとき
 %\documentclass[uplatex,dvipdfmx,titlepage,a4j]{jsarticle}% upLaTeX のとき
 \documentclass[dvipdfmx,titlepage,a4j]{jsarticle}  % pLaTeX のとき
@@ -12,6 +13,9 @@
 \usepackage{fancyvrb}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{cases}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
 
 \fancypagestyle{foot}
 {
@@ -130,6 +134,76 @@ R（抵抗）を用いる単純な増幅回路・反転増幅回路から，R（
 \end{enumerate}
 
 \subsection{case 1}
+図\ref{fig:gr:case1}にcase 1の回路特性測定結果をグラフで示す．
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{8cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.6]{../data/case1-g.eps}
+    \subcaption{周波数対閉ループ利得特性}
+  \end{minipage}
+  \begin{minipage}{8cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.6]{../data/case1-f.eps}
+    \subcaption{周波数対位相差特性}
+  \end{minipage}
+  \caption{case 1における回路特性測定結果}
+  \label{fig:gr:case1}
+\end{figure}
+
+\subsection{case 2}
+図\ref{fig:gr:case2}にcase 2.1 2.2の回路特性測定結果をグラフで重ねて示す．
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{8cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.6]{../data/case2-g.eps}
+    \subcaption{周波数対閉ループ利得特性}
+  \end{minipage}
+  \begin{minipage}{8cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.6]{../data/case2-f.eps}
+    \subcaption{周波数対位相差特性}
+  \end{minipage}
+  \caption{case 2.1 2.2における回路特性測定結果}
+  \label{fig:gr:case2}
+\end{figure}
+
+\subsection{case 3}
+図\ref{fig:gr:case3}にcase 3.1 3.2の回路特性測定結果をグラフで重ねて示す．
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{8cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.6]{../data/case3-g.eps}
+    \subcaption{周波数対閉ループ利得特性}
+  \end{minipage}
+  \begin{minipage}{8cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.6]{../data/case3-f.eps}
+    \subcaption{周波数対位相差特性}
+  \end{minipage}
+  \caption{case 3.1 3.2における回路特性測定結果}
+  \label{fig:gr:case3}
+\end{figure}
+
+\subsection{case 4}
+図\ref{fig:gr:case4}にcase 4の回路特性測定結果をグラフで示す．
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{8cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.6]{../data/case4-g.eps}
+    \subcaption{周波数対閉ループ利得特性}
+  \end{minipage}
+  \begin{minipage}{8cm}
+    \centering
+    \includegraphics[keepaspectratio, scale=0.6]{../data/case4-f.eps}
+    \subcaption{周波数対位相差特性}
+  \end{minipage}
+  \caption{case 4における回路特性測定結果}
+  \label{fig:gr:case4}
+\end{figure}
 
 
 \begin{thebibliography}{99}
