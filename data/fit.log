@@ -1,0 +1,268 @@
+
+
+*******************************************************************************
+Thu Dec 22 02:29:59 2022
+
+
+FIT:    data read from 'case1.txt' u 1:6
+        format = x:z
+        x range restricted to [0.100000 : 1000.00]
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a/(1+exp((x-b)/c))
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'a' is zero.
+Warning: Initial value of parameter 'b' is zero.
+Warning: Initial value of parameter 'c' is zero.
+
+Current data point
+=========================
+#               = 1 out of 14
+x               = 1e-30          
+z               = 6.68908        
+
+Current set of parameters
+=========================
+a               = 1e-30          
+b               = 1e-30          
+c               = 1e-30          
+
+BREAK: Function evaluation yields NaN ("not a number")
+
+*******************************************************************************
+Thu Dec 22 02:30:25 2022
+
+
+FIT:    data read from 'case1.txt' u 1:6
+        format = x:z
+        x range restricted to [0.100000 : 1000.00]
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a/(1+exp((x-b)/c))
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 'a' is zero.
+Warning: Initial value of parameter 'b' is zero.
+Warning: Initial value of parameter 'c' is zero.
+
+Current data point
+=========================
+#               = 1 out of 14
+x               = 1e-30          
+z               = 6.68908        
+
+Current set of parameters
+=========================
+a               = 1e-30          
+b               = 1e-30          
+c               = 1e-30          
+
+BREAK: Function evaluation yields NaN ("not a number")
+
+*******************************************************************************
+Thu Dec 22 02:30:26 2022
+
+
+FIT:    data read from 'case1.txt' u 1:6
+        format = x:z
+        x range restricted to [0.100000 : 1000.00]
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a/(1+exp((x-b)/c))
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 14 out of 14
+x               = 1              
+z               = -18.4164       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 10             
+c               = 0.5            
+
+BREAK: Function evaluation yields NaN ("not a number")
+
+*******************************************************************************
+Thu Dec 22 02:30:28 2022
+
+
+FIT:    data read from 'case1.txt' u 1:6
+        format = x:z
+        x range restricted to [0.100000 : 1000.00]
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a/(1+exp((x-b)/c))
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 14 out of 14
+x               = 1              
+z               = -18.4164       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 10             
+c               = 0.5            
+
+BREAK: Function evaluation yields NaN ("not a number")
+
+*******************************************************************************
+Thu Dec 22 02:30:28 2022
+
+
+FIT:    data read from 'case1.txt' u 1:6
+        format = x:z
+        x range restricted to [0.100000 : 1000.00]
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a/(1+exp((x-b)/c))
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 14 out of 14
+x               = 1              
+z               = -18.4164       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 10             
+c               = 0.5            
+
+BREAK: Function evaluation yields NaN ("not a number")
+
+*******************************************************************************
+Thu Dec 22 02:30:32 2022
+
+
+FIT:    data read from 'case1.txt' u 1:6
+        format = x:z
+        x range restricted to [0.100000 : 1000.00]
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a/(1+exp((x-b)/c))
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 14 out of 14
+x               = 1              
+z               = -18.4164       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 10             
+c               = 0.5            
+
+BREAK: Function evaluation yields NaN ("not a number")
+
+*******************************************************************************
+Thu Dec 22 02:30:32 2022
+
+
+FIT:    data read from 'case1.txt' u 1:6
+        format = x:z
+        x range restricted to [0.100000 : 1000.00]
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a/(1+exp((x-b)/c))
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 14 out of 14
+x               = 1              
+z               = -18.4164       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 10             
+c               = 0.5            
+
+BREAK: Function evaluation yields NaN ("not a number")
+
+*******************************************************************************
+Thu Dec 22 02:30:34 2022
+
+
+FIT:    data read from 'case1.txt' u 1:6
+        format = x:z
+        x range restricted to [0.100000 : 1000.00]
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a/(1+exp((x-b)/c))
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 14 out of 14
+x               = 1              
+z               = -18.4164       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 10             
+c               = 0.5            
+
+BREAK: Function evaluation yields NaN ("not a number")
+
+*******************************************************************************
+Thu Dec 22 02:30:54 2022
+
+
+FIT:    data read from 'case1.txt' u 1:6
+        format = x:z
+        x range restricted to [0.100000 : 1000.00]
+        #datapoints = 14
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a/(1+exp((x-b)/c))
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 14 out of 14
+x               = 1              
+z               = -18.4164       
+
+Current set of parameters
+=========================
+a               = 1              
+b               = 10             
+c               = 0.5            
+
+BREAK: Function evaluation yields NaN ("not a number")

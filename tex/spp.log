@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.30)  21 DEC 2022 16:07
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.30)  22 DEC 2022 02:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -375,17 +375,17 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 87.
+(Font)              scaled to size 9.60999pt on input line 86.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 87.
+(Font)              scaled to size 9.60999pt on input line 86.
 LaTeX Font Info:    Font shape `JT1/mc/m/sl' in size <10> not available
-(Font)              Font shape `JT1/mc/m/n' tried instead on input line 114.
+(Font)              Font shape `JT1/mc/m/n' tried instead on input line 113.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 114.
+(Font)              scaled to size 9.60999pt on input line 113.
 LaTeX Font Info:    Font shape `JY1/mc/m/sl' in size <10> not available
-(Font)              Font shape `JY1/mc/m/n' tried instead on input line 114.
+(Font)              Font shape `JY1/mc/m/n' tried instead on input line 113.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 114.
+(Font)              scaled to size 9.60999pt on input line 113.
  [1]
 ***** List of packages loaded by `plautopatch': *****
  plarray.
@@ -406,4 +406,4 @@ Here is how much of TeX's memory you used:
  934 hyphenation exceptions out of 8191
  70i,13n,76p,286b,359s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on spp.dvi (3 pages, 8076 bytes).
+Output written on spp.dvi (3 pages, 8836 bytes).
