@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.30)  22 DEC 2022 20:42
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.30)  23 DEC 2022 05:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -437,20 +437,20 @@ File: ../image/di-case1.png Graphic file (type bmp)
 File: ../image/di-case21.png Graphic file (type bmp)
 <../image/di-case21.png>
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <8> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 155.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 165.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 155.
+(Font)              scaled to size 7.68799pt on input line 165.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <8> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 155.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 165.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 155.
+(Font)              scaled to size 7.68799pt on input line 165.
 File: ../image/di-case22.png Graphic file (type bmp)
 <../image/di-case22.png>
+ [3]
 File: ../image/di-case31.png Graphic file (type bmp)
 <../image/di-case31.png>
 File: ../image/di-case32.png Graphic file (type bmp)
 <../image/di-case32.png>
- [3]
 File: ../image/di-case4.png Graphic file (type bmp)
 <../image/di-case4.png>
  [4]
@@ -462,49 +462,54 @@ File: ../image/DS0002.png Graphic file (type bmp)
 <../image/DS0002.png>
 File: ../image/DS0003.png Graphic file (type bmp)
 <../image/DS0003.png>
- [5]
+ [5] [6]
 File: ../image/dia-o.png Graphic file (type bmp)
 <../image/dia-o.png>
- [6]
+ [7]
 File: ../data/case1-g.eps Graphic file (type eps)
 <../data/case1-g.eps>
 File: ../data/case1-f.eps Graphic file (type eps)
 <../data/case1-f.eps>
- [7]
+File: ../image/case1kinji.png Graphic file (type bmp)
+<../image/case1kinji.png>
+ [8]
 File: ../image/fig16.png Graphic file (type bmp)
 <../image/fig16.png>
 File: ../image/case1sim.png Graphic file (type bmp)
 <../image/case1sim.png>
 File: ../image/case1simout.png Graphic file (type bmp)
 <../image/case1simout.png>
+ [9]
+File: ../image/fig17.png Graphic file (type bmp)
+<../image/fig17.png>
 File: ../data/case2-g.eps Graphic file (type eps)
 <../data/case2-g.eps>
 File: ../data/case2-f.eps Graphic file (type eps)
 <../data/case2-f.eps>
- [8]
+ [10]
 File: ../data/case3-g.eps Graphic file (type eps)
 <../data/case3-g.eps>
 File: ../data/case3-f.eps Graphic file (type eps)
 <../data/case3-f.eps>
- [9]
+ [11]
 File: ../data/case4-g.eps Graphic file (type eps)
 <../data/case4-g.eps>
 File: ../data/case4-f.eps Graphic file (type eps)
 <../data/case4-f.eps>
-
+ [12] [13] [14] [15] [16]
 ***** List of packages loaded by `plautopatch': *****
  plarray.
 *****************************************************
 
 AED: lastpage setting LastPage
-[10] (./spp.aux) ) 
+[17] (./spp.aux) ) 
 Here is how much of TeX's memory you used:
- 7376 strings out of 478692
- 122868 string characters out of 5855915
- 616191 words of memory out of 5000000
- 25724 multiletter control sequences out of 15000+600000
+ 7391 strings out of 478692
+ 123173 string characters out of 5855915
+ 641191 words of memory out of 5000000
+ 25737 multiletter control sequences out of 15000+600000
  485756 words of font info for 105 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 70i,13n,76p,321b,687s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,13n,76p,354b,687s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on spp.dvi (11 pages, 30620 bytes).
+Output written on spp.dvi (18 pages, 58248 bytes).

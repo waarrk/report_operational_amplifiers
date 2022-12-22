@@ -64,7 +64,7 @@
 % グループに分かれて実験をするテーマでは，グループメンバーの番号名前を書く．
 \coauthor{
   39番 & 宮崎　来\\
-  40番 & 吉田　\\
+  40番 & 吉田　玲音\\
   43番 & 渡辺　あかり\\
 }
 %
@@ -144,6 +144,16 @@ OPアンプにはイマジナリーショートと呼ばれる特性があり，
 \end{equation}
 
 式より，入力電圧に対して出力電圧は$-R_f/R_i$倍となることがわかる．
+
+なお，$A_0$が無限大と仮定できない場合は，端子間電圧$\displaystyle v_s = \frac{v_o}{A_0}$として
+
+\begin{eqnarray}
+    \frac{v_i - v_s}{R_i} &=& \frac{v_s - v_o}{R_f} \nonumber \\
+    \frac{v_o}{v_i} &=& \frac{R_f A_0}{(A_0 - 1)R_i + R_f} \nonumber \\
+    v_o &=& \frac{R_f A_0 v_i}{(A_0 - 1)R_i + R_f}
+\end{eqnarray}
+
+のように求められる．（課題1-1）
 
 \paragraph{微分回路\\}
 図\ref{fig:di:case2}(a)にOPアンプを用いた微分回路を示す．
@@ -241,6 +251,14 @@ $R_s$の効果が$C_i$成分を上回る点が，微分回路としての機能�
 \end{equation}
 
 \section{演算回路の動作観測}
+基本微分回路，基本積分回路に，
+
+(a)正弦波 振幅0.5V 1kHz
+(b)矩形波 振幅0.5V 1kHz
+を与え，出力電圧の波形を記録した．
+
+図\ref{fig:oc:case2}に微分回路の出力，図\ref{fig:oc:case3}に積分回路の出力を示す．
+
 \begin{figure}[H]
   \centering
   \begin{minipage}{8cm}
@@ -273,6 +291,8 @@ $R_s$の効果が$C_i$成分を上回る点が，微分回路としての機能�
   \label{fig:oc:case3}
 \end{figure}
 
+正弦波入力ではそれぞれの入力波形に対する演算による位相差の発生，矩形波入力では演算時に発生する微積分係数の変動の様子が認められる．
+
 \section{演算回路の特性測定}
 反転増幅回路（case 1），微分回路（case 2.1），実用微分回路（case 2.2），積分回路（case 3.1），実用積分回路（case 3.2），バンドパスフィルタ（case 4）とし，
 各回路の閉ループ利得，入力に対する出力の位相差を測定する． 
@@ -301,6 +321,20 @@ $R_s$の効果が$C_i$成分を上回る点が，微分回路としての機能�
 \begin{enumerate}
   \item $R_i$ 10k$\Omega$
   \item $R_f$ 20k$\Omega$
+\end{enumerate}
+
+\paragraph{case 2.1 2.2}
+\begin{enumerate}
+  \item $C_{i}$ 47pF
+  \item $R_f$ 20k$\Omega$
+  \item $R_s$ 2k$\Omega$
+\end{enumerate}
+
+\paragraph{case 3.1 3.2}
+\begin{enumerate}
+  \item $R_i$ 10k$\Omega$
+  \item $C_{f}$ 22pF
+  \item $R_s$ 2k$\Omega$
 \end{enumerate}
 
 \paragraph{case 4}
@@ -357,7 +391,18 @@ $R_i = 10k\Omega$ ,$R_f = 20k\Omega$より，測定対象の閉ループゲイ�
 また，非反転増幅回路にて位相差は発生しないため0である．
 
 図\ref{fig:gr:case1}からは，$100$Hzから$20$kHz弱まではこの理論値を満たし，その後線形に降伏していることが確認できる．
-この降伏は，オペアンプ内部に存在するC（キャパシタ）成分により，高周波領域において開ループゲインが減少することにより発生しているとみられる．
+この降伏は，オペアンプ内部に存在するC（キャパシタ）成分により，高周波領域において開ループゲイン$A_0$が減少することにより発生しているとみられる．
+
+-20[dB/dec]にて近似直線を加えたものを図\ref{fig:case1kinji}に示す．
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=7cm]{../image/case1kinji.png}
+      \caption{周波数対閉ループ利得特性の直線近似}
+      \label{fig:case1kinji}
+  \end{center}
+\end{figure}
+
+図\ref{fig:case1kinji}より，カットオフ周波数は30kHz付近であることが確認できる．（課題1-3）
 
 この特性が正しいか確認するため，文献[2]より，図\ref{fig:16}にOP07の閉ループ周波数応答特性を示す．
 \begin{figure}[H]
@@ -386,9 +431,27 @@ $R_i = 10k\Omega$ ,$R_f = 20k\Omega$より，測定対象の閉ループゲイ�
   \caption{LTSpiceを用いたcase 1のシミュレーション}
   \label{fig:gr:case1sim}
 \end{figure}
-この場合も，20kHz付近にて降伏が始まる様子が確認できる．
+この場合も，30kHz付近にて降伏が始まる様子が確認できる．
 
 以上の結果から，測定値は正しい特性を観測したものであると判断する．
+
+最後に$A_0$が20\%低下した点を考え理論値を計算し比較する．$A_0 = 200000$と仮定して，
+\begin{eqnarray}
+  G &=& 20 log_{10} \frac{v_o}{v_i} \nonumber \\
+  &=& 20 log_{10} \frac{R_f A_0}{(A_0 - 1)R_i + R_f} \nonumber \\
+  &\approx& 6.02 \mathrm{[Hz]}
+\end{eqnarray}
+
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=7cm]{../image/fig17.png}
+      \caption{データシート上の開ループ周波数応答特性}
+      \label{fig:17}
+  \end{center}
+\end{figure}
+
+20\%の低下であるから，-1.9[dB]程度の変化である．このとき図\ref{fig:17}はほとんど変化を示しておらず，計算結果と一致する．
+従って，$A_0$の20\%低下ではほとんどゲイン変化は起こらない．(課題1-2)
 
 \subsection{case 2}
 図\ref{fig:gr:case2}にcase 2.1 2.2の回路特性測定結果をグラフで重ねて示す．
@@ -417,8 +480,24 @@ $R_i = 10k\Omega$ ,$R_f = 20k\Omega$より，測定対象の閉ループゲイ�
 ここで，カットオフ周波数$f_{cut}$とすると，
 \begin{eqnarray}
   f_{cut} &=& \frac{1}{2\pi R_s C_i}\\
-  &\approx& 6.02 \mathrm{[Hz]}
+  &\approx& 1700 \mathrm{[Hz]}
 \end{eqnarray}
+
+であり，図(a)，(b)の降伏開始点と一致していることがわかる．
+
+また，実用微分回路の周波数領域について，次の式が成り立つから，理想的な関数は次の式で与えられる．
+\begin{numcases}
+  {}
+  V_i(s) = \left(R_s + \frac{1}{sC_if}\right)I(s) & \nonumber \\
+  V_o(s) = -I(s)R_f & \nonumber
+\end{numcases}
+
+\begin{equation*}
+  \frac{V_i(s)}{V_o(s)} = -\frac{sC_fR_f}{sC_iR_s + 1} = -\frac{0.000044s}{0.000022s + 1}
+\end{equation*}
+
+偏角$\phi$とすると，逆関数より$\displaystyle\phi = \arctan\frac{\frac{1}{\omega C_i}}{R_s} = \arctan\frac{1}{0.000044\pi f}$
+これら式の特性は図\ref{fig:gr:case2}(a)(b)に一致している．(課題2)
 
 \subsection{case 3}
 図\ref{fig:gr:case3}にcase 3.1 3.2の回路特性測定結果をグラフで重ねて示す．
@@ -446,8 +525,24 @@ $R_i = 10k\Omega$ ,$R_f = 20k\Omega$より，測定対象の閉ループゲイ�
 カットオフ周波数は，
 \begin{eqnarray}
   f_{cut} &=& \frac{1}{2\pi R_s C_f}\\
-  &\approx& 6.02 \mathrm{[Hz]}
+  &\approx& 7240 \mathrm{[Hz]}
 \end{eqnarray}
+
+であり，図(a)，(b)の降伏開始点と一致していることがわかる．
+
+また，実用積分回路の周波数領域について，次の式が成り立つから，理想的な関数は次の式で与えられる．
+\begin{numcases}
+  {}
+  V_i(s) = \{I_R(s) + I_C(s)\}R_1 & \nonumber \\
+  V_o(s) = -I_R(s)R_s = -\frac{I_C(s)}{sC_f} & \nonumber
+\end{numcases}
+
+\begin{equation*}
+  \frac{V_i(s)}{V_o(s)} = -\frac{R_1}{R_s + sR_1R_sC_f} = -\frac{1}{2 + j0.000088\pi f}
+\end{equation*}
+
+偏角$\phi$とすると，逆関数より$\displaystyle\phi = \arctan\frac{0.000088\pi f}{2} = \arctan (0.000044\pi f)$
+これら式の特性は図\ref{fig:gr:case3}(a)(b)に一致している．(課題3)
 
 \subsection{case 4}
 図\ref{fig:gr:case4}にcase 4の回路特性測定結果をグラフで示す．
@@ -483,7 +578,140 @@ $R_i = 10k\Omega$ ,$R_f = 20k\Omega$より，測定対象の閉ループゲイ�
 これら帯域特性は測定データと合致する．
 したがって測定値は正しい特性を観測したものだと判断する．
 
-\section{付録　測定データ}
+\section{測定データ}
+実験中に測定したデータを添付する．
+\begin{table}[H]
+  \centering
+  \caption{case 1}
+  \begin{tabular}{ll|ll|llll}
+  \hline
+  \multicolumn{2}{l|}{入力諸元}                        & \multicolumn{2}{l|}{測定値}                           & \multicolumn{4}{l}{計算値}                                                                                                                          \\ \hline
+  \multicolumn{1}{l|}{周波数{[}kHz{]}} & 入力{[}V{]} & \multicolumn{1}{l|}{出力{[}V{]}} & 位相遅れ{[}us{]} & \multicolumn{1}{l|}{利得比} & \multicolumn{1}{l|}{利得G{[}dB{]}} & \multicolumn{1}{l|}{1周期T{[}us{]}} & \multicolumn{1}{l}{位相遅れ{[}deg{]}} \\ \hline \hline
+  \multicolumn{1}{l|}{0.1}           & 2           & \multicolumn{1}{l|}{4.32}        & 0               & \multicolumn{1}{l|}{2.16}    & \multicolumn{1}{l|}{6.69}            & \multicolumn{1}{l|}{10000.00}        & 0                                   \\ \hline
+  \multicolumn{1}{l|}{0.2}           & 2           & \multicolumn{1}{l|}{4.2}         & 0               & \multicolumn{1}{l|}{2.1}     & \multicolumn{1}{l|}{6.44}            & \multicolumn{1}{l|}{5000.00}         & 0                                   \\ \hline
+  \multicolumn{1}{l|}{0.5}           & 2           & \multicolumn{1}{l|}{4.2}         & 0               & \multicolumn{1}{l|}{2.1}     & \multicolumn{1}{l|}{6.44}            & \multicolumn{1}{l|}{2000.00}         & 0                                   \\ \hline
+  \multicolumn{1}{l|}{1}             & 2           & \multicolumn{1}{l|}{4.2}         & 0               & \multicolumn{1}{l|}{2.1}     & \multicolumn{1}{l|}{6.44}            & \multicolumn{1}{l|}{1000.00}         & 0                                   \\ \hline
+  \multicolumn{1}{l|}{2}             & 2           & \multicolumn{1}{l|}{4.2}         & 0               & \multicolumn{1}{l|}{2.1}     & \multicolumn{1}{l|}{6.44}            & \multicolumn{1}{l|}{500.00}          & 0                                   \\ \hline
+  \multicolumn{1}{l|}{5}             & 2           & \multicolumn{1}{l|}{4.2}         & 0               & \multicolumn{1}{l|}{2.1}     & \multicolumn{1}{l|}{6.44}            & \multicolumn{1}{l|}{200.00}          & 0                                   \\ \hline
+  \multicolumn{1}{l|}{10}            & 2           & \multicolumn{1}{l|}{4.16}        & 0               & \multicolumn{1}{l|}{2.08}    & \multicolumn{1}{l|}{6.36}            & \multicolumn{1}{l|}{100.00}          & 0                                   \\ \hline
+  \multicolumn{1}{l|}{20}            & 2           & \multicolumn{1}{l|}{4.16}        & 0               & \multicolumn{1}{l|}{2.08}    & \multicolumn{1}{l|}{6.36}            & \multicolumn{1}{l|}{50.00}           & 0                                   \\ \hline
+  \multicolumn{1}{l|}{30}            & 2           & \multicolumn{1}{l|}{4.04}        & -2.5            & \multicolumn{1}{l|}{2.02}    & \multicolumn{1}{l|}{6.11}            & \multicolumn{1}{l|}{33.33}           & -27                                 \\ \hline
+  \multicolumn{1}{l|}{50}            & 2           & \multicolumn{1}{l|}{2.4}         & -3              & \multicolumn{1}{l|}{1.2}     & \multicolumn{1}{l|}{1.58}            & \multicolumn{1}{l|}{20.00}           & -54                                 \\ \hline
+  \multicolumn{1}{l|}{100}           & 2           & \multicolumn{1}{l|}{1.16}        & -2.4            & \multicolumn{1}{l|}{0.58}    & \multicolumn{1}{l|}{-4.73}           & \multicolumn{1}{l|}{10.00}           & -86.4                               \\ \hline
+  \multicolumn{1}{l|}{200}           & 2           & \multicolumn{1}{l|}{0.6}         & -1.6            & \multicolumn{1}{l|}{0.3}     & \multicolumn{1}{l|}{-10.46}          & \multicolumn{1}{l|}{5.00}            & -115.2                              \\ \hline
+  \multicolumn{1}{l|}{300}           & 2           & \multicolumn{1}{l|}{0.44}        & -1.25           & \multicolumn{1}{l|}{0.22}    & \multicolumn{1}{l|}{-13.15}          & \multicolumn{1}{l|}{3.33}            & -135                                \\ \hline
+  \multicolumn{1}{l|}{500}           & 2           & \multicolumn{1}{l|}{0.24}        & -0.8            & \multicolumn{1}{l|}{0.12}    & \multicolumn{1}{l|}{-18.42}          & \multicolumn{1}{l|}{2.00}            & -144                                \\ \hline
+  \end{tabular}
+\end{table}
+\begin{table}[H]
+  \centering
+  \caption{case 2.1}
+  \begin{tabular}{ll|ll|llll}
+  \hline
+  \multicolumn{2}{l|}{入力諸元}                        & \multicolumn{2}{l|}{測定値}                           & \multicolumn{4}{l}{計算値}                                                                                                                          \\ \hline
+  \multicolumn{1}{l|}{周波数{[}kHz{]}} & 入力{[}V{]} & \multicolumn{1}{l|}{出力{[}V{]}} & 位相遅れ{[}us{]} & \multicolumn{1}{l|}{利得比} & \multicolumn{1}{l|}{利得G{[}dB{]}} & \multicolumn{1}{l|}{1周期T{[}us{]}} & \multicolumn{1}{l}{位相遅れ{[}deg{]}} \\ \hline \hline
+  \multicolumn{1}{l|}{0.1}           & 0.5         & \multicolumn{1}{l|}{0.165}       & 2800            & \multicolumn{1}{l|}{0.33}    & \multicolumn{1}{l|}{-9.63}           & \multicolumn{1}{l|}{10000}           & 100.8                               \\ \hline
+  \multicolumn{1}{l|}{0.2}           & 0.5         & \multicolumn{1}{l|}{0.19}        & 1000            & \multicolumn{1}{l|}{0.38}    & \multicolumn{1}{l|}{-8.40}           & \multicolumn{1}{l|}{5000}            & 72                                  \\ \hline
+  \multicolumn{1}{l|}{0.5}           & 0.5         & \multicolumn{1}{l|}{0.28}        & 500             & \multicolumn{1}{l|}{0.56}    & \multicolumn{1}{l|}{-5.04}           & \multicolumn{1}{l|}{2000}            & 90                                  \\ \hline
+  \multicolumn{1}{l|}{1}             & 0.5         & \multicolumn{1}{l|}{0.44}        & 250             & \multicolumn{1}{l|}{0.88}    & \multicolumn{1}{l|}{-1.11}           & \multicolumn{1}{l|}{1000}            & 90                                  \\ \hline
+  \multicolumn{1}{l|}{2}             & 0.5         & \multicolumn{1}{l|}{0.75}        & 100             & \multicolumn{1}{l|}{1.5}     & \multicolumn{1}{l|}{3.52}            & \multicolumn{1}{l|}{500}             & 72                                  \\ \hline
+  \multicolumn{1}{l|}{5}             & 0.5         & \multicolumn{1}{l|}{1.7}         & 50              & \multicolumn{1}{l|}{3.4}     & \multicolumn{1}{l|}{10.63}           & \multicolumn{1}{l|}{200}             & 90                                  \\ \hline
+  \multicolumn{1}{l|}{10}            & 0.5         & \multicolumn{1}{l|}{3.28}        & 20              & \multicolumn{1}{l|}{6.56}    & \multicolumn{1}{l|}{16.34}           & \multicolumn{1}{l|}{100}             & 72                                  \\ \hline
+  \multicolumn{1}{l|}{20}            & 0.5         & \multicolumn{1}{l|}{6}           & 12.5            & \multicolumn{1}{l|}{12}      & \multicolumn{1}{l|}{21.58}           & \multicolumn{1}{l|}{50}              & 90                                  \\ \hline
+  \end{tabular}
+\end{table}
+\begin{table}[H]
+  \centering
+  \caption{case 2.2}
+  \begin{tabular}{ll|ll|llll}
+  \hline
+  \multicolumn{2}{l|}{入力諸元}                        & \multicolumn{2}{l|}{測定値}                           & \multicolumn{4}{l}{計算値}                                                                                                                          \\ \hline
+  \multicolumn{1}{l|}{周波数{[}kHz{]}} & 入力{[}V{]} & \multicolumn{1}{l|}{出力{[}V{]}} & 位相遅れ{[}us{]} & \multicolumn{1}{l|}{利得比} & \multicolumn{1}{l|}{利得G{[}dB{]}} & \multicolumn{1}{l|}{1周期T{[}us{]}} & \multicolumn{1}{l}{位相遅れ{[}deg{]}} \\ \hline \hline
+  \multicolumn{1}{l|}{0.1}           & 0.5         & \multicolumn{1}{l|}{0.08}        & 2500            & \multicolumn{1}{l|}{0.16}    & \multicolumn{1}{l|}{-15.92}          & \multicolumn{1}{l|}{10000.00}        & 90.00                               \\ \hline
+  \multicolumn{1}{l|}{0.2}           & 0.5         & \multicolumn{1}{l|}{0.08}        & 1250            & \multicolumn{1}{l|}{0.16}    & \multicolumn{1}{l|}{-15.92}          & \multicolumn{1}{l|}{5000.00}         & 90.00                               \\ \hline
+  \multicolumn{1}{l|}{0.5}           & 0.5         & \multicolumn{1}{l|}{0.17}        & 500             & \multicolumn{1}{l|}{0.34}    & \multicolumn{1}{l|}{-9.37}           & \multicolumn{1}{l|}{2000.00}         & 90.00                               \\ \hline
+  \multicolumn{1}{l|}{0.75}          & 0.5         & \multicolumn{1}{l|}{0.25}        & 350             & \multicolumn{1}{l|}{0.5}     & \multicolumn{1}{l|}{-6.02}           & \multicolumn{1}{l|}{1333.33}         & 94.50                               \\ \hline
+  \multicolumn{1}{l|}{1}             & 0.5         & \multicolumn{1}{l|}{0.33}        & 250             & \multicolumn{1}{l|}{0.66}    & \multicolumn{1}{l|}{-3.61}           & \multicolumn{1}{l|}{1000.00}         & 90.00                               \\ \hline
+  \multicolumn{1}{l|}{1.5}           & 0.5         & \multicolumn{1}{l|}{0.46}        & 160             & \multicolumn{1}{l|}{0.92}    & \multicolumn{1}{l|}{-0.72}           & \multicolumn{1}{l|}{666.67}          & 86.40                               \\ \hline
+  \multicolumn{1}{l|}{2}             & 0.5         & \multicolumn{1}{l|}{0.6}         & 110             & \multicolumn{1}{l|}{1.2}     & \multicolumn{1}{l|}{1.58}            & \multicolumn{1}{l|}{500.00}          & 79.20                               \\ \hline
+  \multicolumn{1}{l|}{5}             & 0.5         & \multicolumn{1}{l|}{1.4}         & 37.5            & \multicolumn{1}{l|}{2.8}     & \multicolumn{1}{l|}{8.94}            & \multicolumn{1}{l|}{200.00}          & 67.50                               \\ \hline
+  \multicolumn{1}{l|}{10}            & 0.5         & \multicolumn{1}{l|}{2.38}        & 15              & \multicolumn{1}{l|}{4.76}    & \multicolumn{1}{l|}{13.55}           & \multicolumn{1}{l|}{100.00}          & 54.00                               \\ \hline
+  \multicolumn{1}{l|}{20}            & 0.5         & \multicolumn{1}{l|}{3.22}        & 5               & \multicolumn{1}{l|}{6.44}    & \multicolumn{1}{l|}{16.18}           & \multicolumn{1}{l|}{50.00}           & 36.00                               \\ \hline
+  \multicolumn{1}{l|}{50}            & 0.5         & \multicolumn{1}{l|}{3.6}         & 1.25            & \multicolumn{1}{l|}{7.2}     & \multicolumn{1}{l|}{17.15}           & \multicolumn{1}{l|}{20.00}           & 22.50  
+  \end{tabular}
+\end{table}
+\begin{table}[H]
+  \centering
+  \caption{case 3.1}
+  \begin{tabular}{ll|ll|llll}
+  \hline
+  \multicolumn{2}{l|}{入力諸元}                        & \multicolumn{2}{l|}{測定値}                           & \multicolumn{4}{l}{計算値}                                                                                                                          \\ \hline
+  \multicolumn{1}{l|}{周波数{[}kHz{]}} & 入力{[}V{]} & \multicolumn{1}{l|}{出力{[}V{]}} & 位相遅れ{[}us{]} & \multicolumn{1}{l|}{利得比} & \multicolumn{1}{l|}{利得G{[}dB{]}} & \multicolumn{1}{l|}{1周期T{[}us{]}} & \multicolumn{1}{l}{位相遅れ{[}deg{]}} \\ \hline \hline
+  \multicolumn{1}{l|}{0.3}           & 0.5         & \multicolumn{1}{l|}{11.4}        & -750            & \multicolumn{1}{l|}{22.8}    & \multicolumn{1}{l|}{27.16}           & \multicolumn{1}{l|}{3333.33}         & -81.00                              \\ \hline
+  \multicolumn{1}{l|}{0.5}           & 0.5         & \multicolumn{1}{l|}{7.2}         & -500            & \multicolumn{1}{l|}{14.4}    & \multicolumn{1}{l|}{23.17}           & \multicolumn{1}{l|}{2000.00}         & -90.00                              \\ \hline
+  \multicolumn{1}{l|}{1}             & 0.5         & \multicolumn{1}{l|}{3.8}         & -250            & \multicolumn{1}{l|}{7.6}     & \multicolumn{1}{l|}{17.62}           & \multicolumn{1}{l|}{1000.00}         & -90.00                              \\ \hline
+  \multicolumn{1}{l|}{2}             & 0.5         & \multicolumn{1}{l|}{1.8}         & -130            & \multicolumn{1}{l|}{3.6}     & \multicolumn{1}{l|}{11.13}           & \multicolumn{1}{l|}{500.00}          & -93.60                              \\ \hline
+  \multicolumn{1}{l|}{5}             & 0.5         & \multicolumn{1}{l|}{0.8}         & -50             & \multicolumn{1}{l|}{1.6}     & \multicolumn{1}{l|}{4.08}            & \multicolumn{1}{l|}{200.00}          & -90.00                              \\ \hline
+  \multicolumn{1}{l|}{10}            & 0.5         & \multicolumn{1}{l|}{0.63}        & -25             & \multicolumn{1}{l|}{1.26}    & \multicolumn{1}{l|}{2.01}            & \multicolumn{1}{l|}{100.00}          & -90.00                              \\ \hline
+  \multicolumn{1}{l|}{20}            & 0.5         & \multicolumn{1}{l|}{0.47}        & -10             & \multicolumn{1}{l|}{0.94}    & \multicolumn{1}{l|}{-0.54}           & \multicolumn{1}{l|}{50.00}           & -72.00                              \\ \hline
+  \multicolumn{1}{l|}{50}            & 0.5         & \multicolumn{1}{l|}{0.36}        & -5              & \multicolumn{1}{l|}{0.72}    & \multicolumn{1}{l|}{-2.85}           & \multicolumn{1}{l|}{20.00}           & -90.00   
+  \end{tabular}
+\end{table}
+\begin{table}[H]
+  \centering
+  \caption{case 3.2}
+  \begin{tabular}{ll|ll|llll}
+  \hline
+  \multicolumn{2}{l|}{入力諸元}                        & \multicolumn{2}{l|}{測定値}                           & \multicolumn{4}{l}{計算値}                                                                                                                          \\ \hline
+  \multicolumn{1}{l|}{周波数{[}kHz{]}} & 入力{[}V{]} & \multicolumn{1}{l|}{出力{[}V{]}} & 位相遅れ{[}us{]} & \multicolumn{1}{l|}{利得比} & \multicolumn{1}{l|}{利得G{[}dB{]}} & \multicolumn{1}{l|}{1周期T{[}us{]}} & \multicolumn{1}{l}{位相遅れ{[}deg{]}} \\ \hline \hline
+  \multicolumn{1}{l|}{0.1}           & 0.5         & \multicolumn{1}{l|}{1.28}        & 0               & \multicolumn{1}{l|}{2.56}    & \multicolumn{1}{l|}{8.16}            & \multicolumn{1}{l|}{10000.00}        & -180                                \\ \hline
+  \multicolumn{1}{l|}{0.2}           & 0.5         & \multicolumn{1}{l|}{1.25}        & 0               & \multicolumn{1}{l|}{2.5}     & \multicolumn{1}{l|}{7.96}            & \multicolumn{1}{l|}{5000.00}         & -180                                \\ \hline
+  \multicolumn{1}{l|}{0.5}           & 0.5         & \multicolumn{1}{l|}{1.25}        & 0               & \multicolumn{1}{l|}{2.5}     & \multicolumn{1}{l|}{7.96}            & \multicolumn{1}{l|}{2000.00}         & -180                                \\ \hline
+  \multicolumn{1}{l|}{0.75}          & 0.5         & \multicolumn{1}{l|}{1.22}        & 25              & \multicolumn{1}{l|}{2.44}    & \multicolumn{1}{l|}{7.75}            & \multicolumn{1}{l|}{1333.33}         & -173.25                             \\ \hline
+  \multicolumn{1}{l|}{1}             & 0.5         & \multicolumn{1}{l|}{1.22}        & 50              & \multicolumn{1}{l|}{2.44}    & \multicolumn{1}{l|}{7.75}            & \multicolumn{1}{l|}{1000.00}         & -162                                \\ \hline
+  \multicolumn{1}{l|}{1.5}           & 0.5         & \multicolumn{1}{l|}{1.2}         & 50              & \multicolumn{1}{l|}{2.4}     & \multicolumn{1}{l|}{7.60}            & \multicolumn{1}{l|}{666.67}          & -153                                \\ \hline
+  \multicolumn{1}{l|}{2}             & 0.5         & \multicolumn{1}{l|}{1.14}        & 50              & \multicolumn{1}{l|}{2.28}    & \multicolumn{1}{l|}{7.16}            & \multicolumn{1}{l|}{500.00}          & -144                                \\ \hline
+  \multicolumn{1}{l|}{5}             & 0.5         & \multicolumn{1}{l|}{1.03}        & 30              & \multicolumn{1}{l|}{2.06}    & \multicolumn{1}{l|}{6.28}            & \multicolumn{1}{l|}{200.00}          & -126                                \\ \hline
+  \multicolumn{1}{|l|}{10}           & 0.5         & \multicolumn{1}{l|}{0.72}        & 20              & \multicolumn{1}{l|}{1.44}    & \multicolumn{1}{l|}{3.17}            & \multicolumn{1}{l|}{100.00}          & \multicolumn{1}{l|}{-108}           \\ \hline
+  \multicolumn{1}{|l|}{20}           & 0.5         & \multicolumn{1}{l|}{0.52}        & 10              & \multicolumn{1}{l|}{1.04}    & \multicolumn{1}{l|}{0.34}            & \multicolumn{1}{l|}{50.00}           & \multicolumn{1}{l|}{-108}           \\ \hline
+  \multicolumn{1}{|l|}{50}           & 0.5         & \multicolumn{1}{l|}{0.388}       & 5               & \multicolumn{1}{l|}{0.776}   & \multicolumn{1}{l|}{-2.20}           & \multicolumn{1}{l|}{20.00}           & \multicolumn{1}{l|}{-90}            \\ \hline
+  \end{tabular}
+\end{table}
+\begin{table}[H]
+  \centering
+  \caption{case 4}
+  \begin{tabular}{ll|ll|llll}
+  \hline
+  \multicolumn{2}{l|}{入力諸元}                        & \multicolumn{2}{l|}{測定値}                           & \multicolumn{4}{l}{計算値}                                                                                                                          \\ \hline
+  \multicolumn{1}{l|}{周波数{[}kHz{]}} & 入力{[}V{]} & \multicolumn{1}{l|}{出力{[}V{]}} & 位相遅れ{[}us{]} & \multicolumn{1}{l|}{利得比} & \multicolumn{1}{l|}{利得G{[}dB{]}} & \multicolumn{1}{l|}{1周期T{[}us{]}} & \multicolumn{1}{l}{位相遅れ{[}deg{]}} \\ \hline \hline
+  \multicolumn{1}{l|}{0.1}           & 0.5         & \multicolumn{1}{l|}{0.01}        & 2500            & \multicolumn{1}{l|}{0.02}    & \multicolumn{1}{l|}{-33.98}          & \multicolumn{1}{l|}{10000.00}        & 90                                  \\ \hline
+  \multicolumn{1}{l|}{0.2}           & 0.5         & \multicolumn{1}{l|}{0.01}        & 1250            & \multicolumn{1}{l|}{0.02}    & \multicolumn{1}{l|}{-33.98}          & \multicolumn{1}{l|}{5000.00}         & 90                                  \\ \hline
+  \multicolumn{1}{l|}{0.5}           & 0.5         & \multicolumn{1}{l|}{0.02}        & 500             & \multicolumn{1}{l|}{0.04}    & \multicolumn{1}{l|}{-27.96}          & \multicolumn{1}{l|}{2000.00}         & 90                                  \\ \hline
+  \multicolumn{1}{l|}{1}             & 0.5         & \multicolumn{1}{l|}{0.03}        & 200             & \multicolumn{1}{l|}{0.06}    & \multicolumn{1}{l|}{-24.44}          & \multicolumn{1}{l|}{1000.00}         & 72                                  \\ \hline
+  \multicolumn{1}{l|}{2}             & 0.5         & \multicolumn{1}{l|}{0.09}        & 100             & \multicolumn{1}{l|}{0.18}    & \multicolumn{1}{l|}{-14.89}          & \multicolumn{1}{l|}{500.00}          & 72                                  \\ \hline
+  \multicolumn{1}{l|}{3}             & 0.5         & \multicolumn{1}{l|}{0.135}       & 60              & \multicolumn{1}{l|}{0.27}    & \multicolumn{1}{l|}{-11.37}          & \multicolumn{1}{l|}{333.33}          & 64.8                                \\ \hline
+  \multicolumn{1}{l|}{4}             & 0.5         & \multicolumn{1}{l|}{0.22}        & 45              & \multicolumn{1}{l|}{0.44}    & \multicolumn{1}{l|}{-7.13}           & \multicolumn{1}{l|}{250.00}          & 64.8                                \\ \hline
+  \multicolumn{1}{l|}{5}             & 0.5         & \multicolumn{1}{l|}{0.3}         & 25              & \multicolumn{1}{l|}{0.6}     & \multicolumn{1}{l|}{-4.44}           & \multicolumn{1}{l|}{200.00}          & 45                                  \\ \hline
+  \multicolumn{1}{|l|}{6}            & 0.5         & \multicolumn{1}{l|}{0.3}         & 25              & \multicolumn{1}{l|}{0.6}     & \multicolumn{1}{l|}{-4.44}           & \multicolumn{1}{l|}{166.67}          & \multicolumn{1}{l|}{54}             \\ \hline
+  \multicolumn{1}{|l|}{7}            & 0.5         & \multicolumn{1}{l|}{0.38}        & 20              & \multicolumn{1}{l|}{0.76}    & \multicolumn{1}{l|}{-2.38}           & \multicolumn{1}{l|}{142.86}          & \multicolumn{1}{l|}{50.4}           \\ \hline
+  \multicolumn{1}{|l|}{8}            & 0.5         & \multicolumn{1}{l|}{0.4}         & 12              & \multicolumn{1}{l|}{0.8}     & \multicolumn{1}{l|}{-1.94}           & \multicolumn{1}{l|}{125.00}          & \multicolumn{1}{l|}{34.56}          \\ \hline
+  \multicolumn{1}{|l|}{9}            & 0.5         & \multicolumn{1}{l|}{0.38}        & 10              & \multicolumn{1}{l|}{0.76}    & \multicolumn{1}{l|}{-2.38}           & \multicolumn{1}{l|}{111.11}          & \multicolumn{1}{l|}{32.4}           \\ \hline
+  \multicolumn{1}{|l|}{10}           & 0.5         & \multicolumn{1}{l|}{0.4}         & 10              & \multicolumn{1}{l|}{0.8}     & \multicolumn{1}{l|}{-1.94}           & \multicolumn{1}{l|}{100.00}          & \multicolumn{1}{l|}{36}             \\ \hline
+  \multicolumn{1}{|l|}{20}           & 0.5         & \multicolumn{1}{l|}{0.38}        & 0               & \multicolumn{1}{l|}{0.76}    & \multicolumn{1}{l|}{-2.38}           & \multicolumn{1}{l|}{50.00}           & \multicolumn{1}{l|}{0}              \\ \hline
+  \multicolumn{1}{|l|}{30}           & 0.5         & \multicolumn{1}{l|}{0.4}         & 0               & \multicolumn{1}{l|}{0.8}     & \multicolumn{1}{l|}{-1.94}           & \multicolumn{1}{l|}{33.33}           & \multicolumn{1}{l|}{0}              \\ \hline
+  \multicolumn{1}{|l|}{40}           & 0.5         & \multicolumn{1}{l|}{0.4}         & 0               & \multicolumn{1}{l|}{0.8}     & \multicolumn{1}{l|}{-1.94}           & \multicolumn{1}{l|}{25.00}           & \multicolumn{1}{l|}{0}              \\ \hline
+  \multicolumn{1}{|l|}{50}           & 0.5         & \multicolumn{1}{l|}{0.4}         & -1.25           & \multicolumn{1}{l|}{0.8}     & \multicolumn{1}{l|}{-1.94}           & \multicolumn{1}{l|}{20.00}           & \multicolumn{1}{l|}{-22.5}          \\ \hline
+  \multicolumn{1}{|l|}{60}           & 0.5         & \multicolumn{1}{l|}{0.4}         & -1.25           & \multicolumn{1}{l|}{0.8}     & \multicolumn{1}{l|}{-1.94}           & \multicolumn{1}{l|}{16.67}           & \multicolumn{1}{l|}{-27}            \\ \hline
+  \multicolumn{1}{|l|}{70}           & 0.5         & \multicolumn{1}{l|}{0.38}        & -1.25           & \multicolumn{1}{l|}{0.76}    & \multicolumn{1}{l|}{-2.38}           & \multicolumn{1}{l|}{14.29}           & \multicolumn{1}{l|}{-31.5}          \\ \hline
+  \multicolumn{1}{|l|}{80}           & 0.5         & \multicolumn{1}{l|}{0.38}        & -1.25           & \multicolumn{1}{l|}{0.76}    & \multicolumn{1}{l|}{-2.38}           & \multicolumn{1}{l|}{12.50}           & \multicolumn{1}{l|}{-36}            \\ \hline
+  \multicolumn{1}{|l|}{90}           & 0.5         & \multicolumn{1}{l|}{0.36}        & -1.25           & \multicolumn{1}{l|}{0.72}    & \multicolumn{1}{l|}{-2.85}           & \multicolumn{1}{l|}{11.11}           & \multicolumn{1}{l|}{-40.5}          \\ \hline
+  \multicolumn{1}{|l|}{100}          & 0.5         & \multicolumn{1}{l|}{0.3}         & -1.25           & \multicolumn{1}{l|}{0.6}     & \multicolumn{1}{l|}{-4.44}           & \multicolumn{1}{l|}{10.00}           & \multicolumn{1}{l|}{-45}            \\ \hline
+  \multicolumn{1}{|l|}{200}          & 0.5         & \multicolumn{1}{l|}{0.15}        & -1              & \multicolumn{1}{l|}{0.3}     & \multicolumn{1}{l|}{-10.46}          & \multicolumn{1}{l|}{5.00}            & \multicolumn{1}{l|}{-72}            \\ \hline
+  \multicolumn{1}{|l|}{300}          & 0.5         & \multicolumn{1}{l|}{0.1}         & -0.8            & \multicolumn{1}{l|}{0.2}     & \multicolumn{1}{l|}{-13.98}          & \multicolumn{1}{l|}{3.33}            & \multicolumn{1}{l|}{-86.4}          \\ \hline
+  \multicolumn{1}{|l|}{400}          & 0.5         & \multicolumn{1}{l|}{0.08}        & -0.5            & \multicolumn{1}{l|}{0.16}    & \multicolumn{1}{l|}{-15.92}          & \multicolumn{1}{l|}{2.50}            & \multicolumn{1}{l|}{-72}            \\ \hline
+  \multicolumn{1}{|l|}{500}          & 0.5         & \multicolumn{1}{l|}{0.05}        & -0.5            & \multicolumn{1}{l|}{0.1}     & \multicolumn{1}{l|}{-20.00}          & \multicolumn{1}{l|}{2.00}            & \multicolumn{1}{l|}{-90}   
+  \end{tabular}
+\end{table}
 
 \begin{thebibliography}{99}
   \bibitem{ataka} 永井　誠、実験テキスト「OPアンプの基礎・応用」、（2022年）
