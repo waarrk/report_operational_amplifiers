@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.30)  22 DEC 2022 03:38
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.euc) (TeX Live 2022) (preloaded format=platex 2022.4.30)  22 DEC 2022 20:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -302,11 +302,7 @@ File: l3backend-dvipdfmx.def 2022-04-20 L3 backend support: dvipdfmx
 \g__pdf_backend_object_int=\count297
 \g__pdf_backend_annotation_int=\count298
 \g__pdf_backend_link_int=\count299
-) (./spp.aux
-
-LaTeX Warning: Label `ataka' multiply defined.
-
-)
+) (./spp.aux)
 \openout1 = `spp.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
@@ -412,70 +408,103 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 9.60999pt on input line 90.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 9.60999pt on input line 90.
-LaTeX Font Info:    Font shape `JT1/mc/m/sl' in size <10> not available
-(Font)              Font shape `JT1/mc/m/n' tried instead on input line 117.
+File: ../image/di-base.png Graphic file (type bmp)
+<../image/di-base.png>
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 117.
-LaTeX Font Info:    Font shape `JY1/mc/m/sl' in size <10> not available
-(Font)              Font shape `JY1/mc/m/n' tried instead on input line 117.
+(Font)              scaled to size 8.64899pt on input line 114.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 117.
+(Font)              scaled to size 8.64899pt on input line 114.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 114.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 114.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 114.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 114.
+LaTeX Font Info:    Font shape `JT1/mc/m/sl' in size <10> not available
+(Font)              Font shape `JT1/mc/m/n' tried instead on input line 118.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 118.
+LaTeX Font Info:    Font shape `JY1/mc/m/sl' in size <10> not available
+(Font)              Font shape `JY1/mc/m/n' tried instead on input line 118.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 118.
  [1]
+File: ../image/di-case1.png Graphic file (type bmp)
+<../image/di-case1.png>
+ [2]
+File: ../image/di-case21.png Graphic file (type bmp)
+<../image/di-case21.png>
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <8> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 155.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 155.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <8> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 155.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 155.
+File: ../image/di-case22.png Graphic file (type bmp)
+<../image/di-case22.png>
+File: ../image/di-case31.png Graphic file (type bmp)
+<../image/di-case31.png>
+File: ../image/di-case32.png Graphic file (type bmp)
+<../image/di-case32.png>
+ [3]
+File: ../image/di-case4.png Graphic file (type bmp)
+<../image/di-case4.png>
+ [4]
+File: ../image/DS0000.png Graphic file (type bmp)
+<../image/DS0000.png>
+File: ../image/DS0001.png Graphic file (type bmp)
+<../image/DS0001.png>
+File: ../image/DS0002.png Graphic file (type bmp)
+<../image/DS0002.png>
+File: ../image/DS0003.png Graphic file (type bmp)
+<../image/DS0003.png>
+ [5]
+File: ../image/dia-o.png Graphic file (type bmp)
+<../image/dia-o.png>
+ [6]
 File: ../data/case1-g.eps Graphic file (type eps)
 <../data/case1-g.eps>
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 143.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 143.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <8> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 143.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 143.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <8> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 143.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 143.
 File: ../data/case1-f.eps Graphic file (type eps)
 <../data/case1-f.eps>
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 150.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 150.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 150.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 150.
+ [7]
+File: ../image/fig16.png Graphic file (type bmp)
+<../image/fig16.png>
+File: ../image/case1sim.png Graphic file (type bmp)
+<../image/case1sim.png>
+File: ../image/case1simout.png Graphic file (type bmp)
+<../image/case1simout.png>
 File: ../data/case2-g.eps Graphic file (type eps)
 <../data/case2-g.eps>
 File: ../data/case2-f.eps Graphic file (type eps)
 <../data/case2-f.eps>
- [2]
+ [8]
 File: ../data/case3-g.eps Graphic file (type eps)
 <../data/case3-g.eps>
 File: ../data/case3-f.eps Graphic file (type eps)
 <../data/case3-f.eps>
+ [9]
 File: ../data/case4-g.eps Graphic file (type eps)
 <../data/case4-g.eps>
 File: ../data/case4-f.eps Graphic file (type eps)
 <../data/case4-f.eps>
- [3]
+
 ***** List of packages loaded by `plautopatch': *****
  plarray.
 *****************************************************
 
 AED: lastpage setting LastPage
-[4] (./spp.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[10] (./spp.aux) ) 
 Here is how much of TeX's memory you used:
- 7286 strings out of 478692
- 120904 string characters out of 5855915
+ 7376 strings out of 478692
+ 122868 string characters out of 5855915
  616191 words of memory out of 5000000
- 25653 multiletter control sequences out of 15000+600000
+ 25724 multiletter control sequences out of 15000+600000
  485756 words of font info for 105 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 70i,13n,76p,321b,690s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,13n,76p,321b,687s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on spp.dvi (5 pages, 11576 bytes).
+Output written on spp.dvi (11 pages, 30620 bytes).

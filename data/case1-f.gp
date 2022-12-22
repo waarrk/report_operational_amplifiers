@@ -2,7 +2,7 @@ set terminal postscript eps monochrome
 set output 'case1-f.eps'
 set size nosquare 1,0.75
 set grid
-set xrange [0.1:1000]
+set xrange [100:1000000]
 set yrange [-180:30]
 set format x "10^{%L}"
 set logscale x
